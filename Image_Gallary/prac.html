@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 id="name">Hello I am Siddhesh</h2>
+        <h3 id="post">I am Engineer</h3>
+    </div>
+    <script>
+        let post=document.getElementById("post");
+        let body=document.querySelector('body')
+        let text="I am DevOps Enthusiast";
+        let count=0;
+        function tp(){
+            if(count<text.length){
+                post.innerHTML  +=text.charAt(count);
+                count++;
+                setTimeout(tp,100);
+            }
+        }
+        post.innerHTML = ""; 
+        tp()
+    </script>
+</body>
+</html>

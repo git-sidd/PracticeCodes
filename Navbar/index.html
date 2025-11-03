@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        font-size: large;
+      }
+
+      .links {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .links a {
+        font-weight: bold;
+        color: rgb(28, 16, 16);
+        text-decoration: none;
+      }
+
+      .search input {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        padding: 5px;
+      }
+
+      .ham button {
+        font-size: 24px;
+        cursor: pointer;
+        color: black;
+        background: none;
+        border: none;
+        display: none; /* hide by default */
+      }
+
+      /* -------- Responsive Section -------- */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .ham button {
+          display: block; /* show hamburger */
+        }
+
+        .links {
+          display: none; /* hide links initially */
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+
+        .links.show {
+          display: flex; /* show when toggled */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <label for="disk">Disk usage:</label>
+<meter id="disk" value="0.6" min="0" max="1">60%</meter>
+
+
+    <div class="container">
+      <div class="logo">Logo</div>
+
+      <div class="ham">
+        <button onclick="toggleMenu()">&#9776;</button>
+      </div>
+
+      <nav class="links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="search">
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

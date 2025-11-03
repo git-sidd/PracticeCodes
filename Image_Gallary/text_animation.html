@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 400px;
+            height: 100px;
+            border-radius: 25px;
+            padding: 10px;
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <p>Hello I am Siddhesh</p>
+            <span id="cursor"></span>
+        </div>
+    </div>
+    <script>
+        let text="Welcome To PCCOER"
+        let index=0;
+        function tp(){
+
+        if(index<text.length){
+            document.getElementById('cursor').innerHTML+=text.charAt(index);
+            index++;
+            setTimeout(tp,100)
+        }
+        }
+        tp()
+        
+    </script>
+</body>
+</html>
